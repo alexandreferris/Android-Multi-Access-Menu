@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/nav_group_1">
+        <item android:id="@+id/nav_main" android:title="Main Activity" android:icon="@drawable/ic_home" />
+    </group>
+    <group android:id="@+id/nav_group_2">
+        <item android:id="@+id/nav_opt1" android:title="Option 1" app:actionLayout="@layout/nav_counter" android:icon="@drawable/ic_action_gear" />
+    </group>
+    <group android:id="@+id/nav_group_3">
+        <item android:id="@+id/nav_opt2" android:title="Option 2" android:icon="@drawable/ic_action_gear" />
+    </group>
+</menu>
