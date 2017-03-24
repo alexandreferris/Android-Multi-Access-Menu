@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".Option1Activity" />
+        <activity android:name=".Option2Activity"></activity>
     </application>
 
 </manifest>

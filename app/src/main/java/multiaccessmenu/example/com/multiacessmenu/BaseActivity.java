@@ -9,10 +9,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -36,7 +36,9 @@ public class BaseActivity extends AppCompatActivity {
         DrawerLayout baseView = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_base, null);
 
         // Activity container in activity_base
-        FrameLayout activityContainer = (FrameLayout) baseView.findViewById(R.id.activity_container);
+        FrameLayout activityContainer = (FrameLayout) baseView.findViewById(R.id.activity_content);
+
+
 
         // Inject new layout (layoutResID) into layout in activity_base container
         getLayoutInflater().inflate(layoutResID, activityContainer, true);
@@ -78,10 +80,10 @@ public class BaseActivity extends AppCompatActivity {
                     myIntent = new Intent(getApplicationContext(), MainActivity.class);
                 } else if(id == R.id.nav_opt1) {
                     // Redirects to Option 1 Activity
-                    //myIntent = new Intent(getApplicationContext(), RandomActivity.class);
+                    myIntent = new Intent(getApplicationContext(), Option1Activity.class);
                 } else if(id == R.id.nav_opt2) {
                     // Redirects to Option 2 Activity
-                    //myIntent = new Intent(getApplicationContext(), FotoActivity.class);
+                    myIntent = new Intent(getApplicationContext(), Option2Activity.class);
                 }
 
                 // Starts Selected Activity
@@ -94,6 +96,13 @@ public class BaseActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
 
+    protected void hideToolbar(Boolean option) {
+        this.toolbarHideStatus = option;
+    }
+
+    protected void setToolbarTitle(String value) {
+        this.toolbarTitle = value;
     }
 }
